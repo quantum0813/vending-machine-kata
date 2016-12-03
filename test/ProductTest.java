@@ -17,4 +17,11 @@ public class ProductTest {
             new Product("Chips", -1.0f);
         });
     }
+
+    @Test
+    public void whenProductNameNullOrPriceLessThan0ThrowException() {
+        assertThrows(IllegalArgumentException.class, () -> {
+            new Product(null, -2.0f);
+        });
+    }
 }
